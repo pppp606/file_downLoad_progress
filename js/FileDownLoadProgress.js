@@ -11,7 +11,7 @@ var FileDownLoadProgress = {
     dataType:"",
     success:function(){},
     error:function(){},
-    speedThreshold:0.4
+    speedThreshold:0.1
   },
   settings:{},
   loadFile:function(options){
@@ -31,9 +31,9 @@ var FileDownLoadProgress = {
       },
       xhr:function(){
         //passing ParentClass
-        var parentClass = this;
+        parentClass = this.context;
         //add event the Progress for XHR
-        xhr = $.ajaxSettings.xhr();
+        var xhr = $.ajaxSettings.xhr();
         xhr.addEventListener("progress",this.progress);
         return xhr;
       },
