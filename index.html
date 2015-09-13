@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="js/FileLoadProgress.js"></script>
+<style>
+#progress.ui-progressbar {
+  height:1em;
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+}
+#progress,
+#progress .ui-corner-all,
+#progress .ui-corner-top,
+#progress .ui-corner-bottom,
+#progress .ui-corner-right,
+#progress .ui-corner-br {
+  border-radius:0px;
+  border:0px;
+}
+#progress.ui-progressbar .ui-progressbar-value {
+  margin:0px;
+  border-radius:0px;
+  border:0px;
+}
+</style>
+<script>
+$(function(){
+  FileLoadProgress.loadFile({
+    url:"data/1m",
+    dataType:"json",
+    success:function() {
+      console.log("success");
+    },
+    error:function() {
+      console.log("error");
+    }
+  });
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
