@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="js/FileLoadProgress.js"></script>
+<script src="js/FileDownLoadProgress.js"></script>
 <style>
 #progress.ui-progressbar {
   height:1em;
@@ -29,7 +29,7 @@
 </style>
 <script>
 $(function(){
-  FileLoadProgress.loadFile({
+  FileDownLoadProgress.loadFile({
     url:"data/1m",
     dataType:"json",
     success:function() {
