@@ -4,7 +4,7 @@
 @param {string} options overWriteDefaults
 */
 var FileDownLoadProgress = {
-  viewFlug:"fastTime",
+  viewFlug:"firstTime",
   defaults:{
     url:"",
     type:"GET",
@@ -39,7 +39,7 @@ var FileDownLoadProgress = {
       },
       progress:function(ev){
         //check speed at the first event
-        if(parentClass.viewFlug == "fastTime"){
+        if(parentClass.viewFlug == "firstTime"){
           parentClass.viewFlug = parentClass.checkProgressBarNecessity(ev);
         }
         if(parentClass.viewFlug){
@@ -57,7 +57,7 @@ var FileDownLoadProgress = {
     $('#progress').animate({opacity:0},500,function(){
       $(this).remove();
     });
-    this.viewFlug = "fastTime";
+    this.viewFlug = "firstTime";
   },
   checkProgressBarNecessity:function(ev){
     return ev.loaded / ev.total < this.settings.speedThreshold;
