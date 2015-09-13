@@ -30,6 +30,8 @@ var FileDownLoadProgress = {
         this.removeProgressBar();
       },
       xhr:function(){
+        //passing ParentClass
+        var parentClass = this;
         //add event the Progress for XHR
         xhr = $.ajaxSettings.xhr();
         xhr.addEventListener("progress",this.progress);
@@ -37,10 +39,10 @@ var FileDownLoadProgress = {
       },
       progress:function(ev){
         //check speed at the first event
-        if(FileDownLoadProgress.viewFlug == "fastTime"){
-          FileDownLoadProgress.viewFlug = FileDownLoadProgress.checkProgressBarNecessity(ev);
+        if(parentClass.viewFlug == "fastTime"){
+          parentClass.viewFlug = parentClass.checkProgressBarNecessity(ev);
         }
-        if(FileDownLoadProgress.viewFlug){
+        if(parentClass.viewFlug){
           //change for value in progress
           $('#progress').progressbar('value',(ev.loaded / ev.total) * 100);
         }
