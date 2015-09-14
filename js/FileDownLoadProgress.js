@@ -50,7 +50,7 @@ var FileDownLoadProgress = {
     });
   },
   addProgressBar:function(){
-    $('body').html('<div id="progress">');
+    $('body').append('<div id="progress">');
     $('#progress').progressbar({value:0,max:100});
   },
   removeProgressBar:function(){
